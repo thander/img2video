@@ -23,8 +23,7 @@ logger = RunPodLogger()
 def handler(event):
 	image_base64 = event["input"]["image"]
 	options = event["input"]["options"]
-	print(image_base64)
-
+	logger.log(options, 'INFO')
 
 if __name__ == "__main__":
     logger.log('API is ready', 'INFO')
