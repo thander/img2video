@@ -24,6 +24,7 @@ def handler(event):
 	image_base64 = event["input"]["image"]
 	options = event["input"]["options"]
 	logger.log(options, 'INFO')
+	return {"result": "fuck yourself"}
 
 if __name__ == "__main__":
     logger.log('API is ready', 'INFO')
