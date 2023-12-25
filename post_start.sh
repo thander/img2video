@@ -10,6 +10,7 @@ export PORT=3000
 # Update, upgrade, install packages and clean up
 apt-get update --yes
 apt-get upgrade --yes
+apt-get install vim -y 
 apt install --yes --no-install-recommends git git-lfs wget curl bash libgl1 software-properties-common openssh-server ffmpeg
 add-apt-repository ppa:deadsnakes/ppa
 apt-get autoremove -y
@@ -23,9 +24,9 @@ then
   echo \"Skipping auto-start of webui\"
 else  echo \"Started webui through relauncher script\"
   cd /runpod-volume
-  git clone https://github.com/thander/img2video temp
-  mv temp/.git img2video/.git
-  rm -rf temp
-  cd img2video
+  rm -rf img2video
+  git clone https://github.com/thander/img2video
+  cd /runpod-volume/img2video
   nohup python -u lucky_handler.py &
 fi
+
